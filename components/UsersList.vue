@@ -11,13 +11,14 @@
         class="py-2 px-4 bg-green-600 text-white rounded border-1 border-green-800 hover:bg-green-700 transition-color ease"
         @click="getUsers"
         v-show="!users.length"
+        data-test="get-users-button"
       >
         Load Users
       </button>
     </div>
     <p class="mb-2" v-if="isLoadingUsers">Loading...</p>
-    <ul v-if="users.length">
-      <li v-for="user in users" :key="user.id" class="py-1">
+    <ul v-if="users.length" data-test="user-list">
+      <li v-for="user in users" :key="user.id" class="py-1" data-test="user">
         <span>{{ user.name }}</span>
       </li>
     </ul>
