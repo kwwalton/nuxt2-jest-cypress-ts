@@ -1,23 +1,21 @@
 import { mutations, actions } from '~/store/users'
-import $repository from '~/plugins/api'
-
-// TODO: use beforeEach to set state
 
 describe('store/users', () => {
-  test('mutations: isLoadingUsers', () => {
-    const state = {
+  let state
+
+  beforeEach(() => {
+    state = {
       users: [],
       isLoadingUsers: false,
     }
+  })
+
+  test('mutations: isLoadingUsers', () => {
     mutations.setIsLoadingUsers(state, true)
     expect(state.isLoadingUsers).toBeTruthy()
   })
 
   test('mutations: setUsers', () => {
-    const state = {
-      users: [],
-      isLoadingUsers: false,
-    }
     const mockResponse = [
       { id: 1, name: 'Pierre' },
       { id: 2, name: 'Jared' },
@@ -27,10 +25,6 @@ describe('store/users', () => {
   })
 
   test('actions: getUsers - Happy Path', async () => {
-    const state = {
-      users: [],
-      isLoadingUsers: false,
-    }
     const mockResponse = [
       { id: 1, name: 'Pierre' },
       { id: 2, name: 'Jared' },
@@ -50,10 +44,6 @@ describe('store/users', () => {
   })
 
   test('actions: getUsers - Unhappy Path', async () => {
-    const state = {
-      users: [],
-      isLoadingUsers: false,
-    }
     const commit = jest.fn()
 
     actions.$repository = {
