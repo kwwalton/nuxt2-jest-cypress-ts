@@ -3,13 +3,13 @@ import createRepository from '~/repository'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $repository: Promise<any>
+    $repository: any
   }
 }
 
 declare module '@nuxt/types' {
   interface Context {
-    $repository: Promise<any>
+    $repository: any
   }
 }
 

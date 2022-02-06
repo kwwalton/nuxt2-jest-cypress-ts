@@ -15,6 +15,14 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# unit testing
+$ npm run test
+
+# end to end testing
+$ npm run build
+$ npm run test:e2e:dev
+
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).

@@ -18,8 +18,18 @@
     </div>
     <p class="mb-2" v-if="isLoadingUsers">Loading...</p>
     <ul v-if="users.length" data-test="user-list">
-      <li v-for="user in users" :key="user.id" class="py-1" data-test="user">
-        <span>{{ user.name }}</span>
+      <li
+        v-for="user in users"
+        :key="user.id"
+        class="py-1 mb-3"
+        data-test="user"
+      >
+        <nuxt-link
+          :to="`/user/${user.id}`"
+          class="p-2 bg-gray-100 hover:bg-gray-200 rounded"
+        >
+          <span>{{ user.name }}</span>
+        </nuxt-link>
       </li>
     </ul>
   </div>
