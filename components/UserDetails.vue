@@ -6,7 +6,7 @@
       </h2>
       <p class="mb-2" v-if="isLoadingUser">Loading...</p>
 
-      <div v-if="user">
+      <div v-if="!isLoadingUser && user">
         <p class="mb-2">
           <span class="font-bold">Name:</span>
           <span>{{ user.name }}</span>
