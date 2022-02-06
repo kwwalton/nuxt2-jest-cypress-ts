@@ -17,4 +17,5 @@ module.exports = {
     '<rootDir>/store/*.ts',
   ],
   testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['<rootDir>/cypress/'],
 }
